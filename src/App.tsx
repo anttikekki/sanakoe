@@ -70,6 +70,7 @@ const kappaleet: Record<Kappale, Array<Sana>> = {
 
 function App() {
   const [kappale, asetaKappale] = useState<Kappale>(Kappale.EnClasse);
+  const [kaikkiSanat, asetaKaikkiSanat] = useState<Array<Sana>>([]);
   const [sanat, asetaSanat] = useState<Array<Sana>>([]);
   const [sana, asetaSana] = useState<Sana>(undefined as unknown as Sana);
   const [tiedetyt, asetaTiedetyt] = useState<Array<Sana>>([]);
@@ -109,6 +110,7 @@ function App() {
   const aloitaPeliAlusta = () => {
     const uudetSanat = _.shuffle(kappaleet[kappale]);
     asetaSanat(uudetSanat);
+    asetaKaikkiSanat(uudetSanat);
     asetaSana(uudetSanat[0]);
     asetaTiedetyt([]);
     asetaEiTiedetyt([]);
@@ -121,6 +123,7 @@ function App() {
       aloitaPeliAlusta();
     }
     asetaSanat(eiTiedetyt);
+    asetaKaikkiSanat(eiTiedetyt);
     asetaSana(eiTiedetyt[0]);
     asetaTiedetyt([]);
     asetaEiTiedetyt([]);
@@ -177,8 +180,7 @@ function App() {
       {!peliLoppu && (
         <div className="row justify-content-md-center">
           <div className="col col-lg-4">
-            Sana {tiedetyt.length + eiTiedetyt.length + 1}/
-            {kappaleet[kappale].length}
+            Sana {kaikkiSanat.length - sanat.length + 1}/{kaikkiSanat.length}
           </div>
         </div>
       )}
