@@ -95,7 +95,7 @@ const kappaleet: Record<Kappale, Array<Sana>> = {
     { fi: "helppo", fr: "facile" },
     { fi: "todella hyvä", fr: "très bien" },
     { fi: "lapsi", fr: "un enfant" },
-    { fi: "un cours de math", fr: "matematiikan tunti" },
+    { fi: "matematiikan tunti", fr: "un cours de math" },
     { fi: "mutta", fr: "mais" },
     { fi: "miksi", fr: "pourquoi" },
     { fi: "pahoillaan", fr: "désolé, désolée" },
