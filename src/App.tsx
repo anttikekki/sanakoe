@@ -8,6 +8,8 @@ enum Kieli {
 }
 
 enum Kappale {
+  Kappale_3 = "3. Tu as quel âge ?",
+  Kappale_4 = "4. Tu as des frères et sœurs ?",
   Kappale_5 = "5. Tu as un chien ?",
   Kappale_6 = "6. À l’école",
   Kappale_7 = "7. Les couleurs",
@@ -16,6 +18,49 @@ enum Kappale {
 type Sana = { fi: string; fr: string };
 
 const kappaleet: Record<Kappale, Array<Sana>> = {
+  [Kappale.Kappale_3]: [
+    { fi: "Kuinka vanha olet?", fr: "Tu as quel âge?" },
+    { fi: "numerot", fr: "les nombres" },
+    { fi: "Hyvää syntymäpäivää?", fr: "Bon anniversaire!" },
+    { fi: "minun syntymäpäiväni", fr: "mos anniversaire" },
+    { fi: "ole hyvä", fr: "tiens" },
+    { fi: "lahja", fr: "un cardeau" },
+    { fi: "kortti", fr: "une carte" },
+    { fi: "kiitos", fr: "merci" },
+    { fi: "mutta", fr: "mais" },
+    { fi: "Olen 9-vuotias", fr: "J'ai neuf ans." },
+    { fi: "vuosi", fr: "un an" },
+    { fi: "oi, oi, ohoh", fr: "oh là là" },
+    { fi: "kynttilä", fr: "une bougie" },
+    { fi: "Katso!", fr: "Regarde!" },
+    { fi: "kakku", fr: "un gâteau" },
+    { fi: "nam", fr: "miam" },
+    { fi: "Maistetaanko?", fr: "On goute?" },
+    { fi: "omistaa; olla jonkun ikäinen", fr: "avoir" },
+    { fi: "minulla on", fr: "j'ai" },
+    { fi: "sinulla on", fr: "tu as" },
+    { fi: "hänellä on (pojasta puhuttaessa)", fr: "il a" },
+    { fi: "hänellä on (tytöstä puhuttaessa)", fr: "elle a" },
+  ],
+  [Kappale.Kappale_4]: [
+    { fi: "Onko sinulla sisaruksia?", fr: "Tu as des frères et sœurs?" },
+    { fi: "minun perheeni", fr: "ma famille" },
+    { fi: "perhevalokuvia", fr: "photos de famille" },
+    { fi: "perhe", fr: "la famille" },
+    { fi: "pikkusisko", fr: "un petite sœurs" },
+    { fi: "pikkuveli", fr: "un petit frère" },
+    { fi: "papukaija", fr: "un parroquet" },
+    { fi: "lisko", fr: "un lézard" },
+    { fi: "(poika) lapsi", fr: "fils" },
+    { fi: "ainoa", fr: "unique" },
+    { fi: "vanhempi sisarus", fr: "ainé" },
+    { fi: "hauska", fr: "drôle" },
+    { fi: "olla", fr: "être" },
+    { fi: "minä olen", fr: "je suis" },
+    { fi: "sinä olet", fr: "tu es" },
+    { fi: "hän on (poika)", fr: "il est" },
+    { fi: "hän on (tyttö)", fr: "tu es" },
+  ],
   [Kappale.Kappale_5]: [
     { fi: "Onko sinulla koira?", fr: "Tu as un chien?" },
     { fi: "eläimet", fr: "les animaux" },
@@ -207,6 +252,8 @@ function App() {
             onChange={vaihdaKappaletta}
             value={kappale}
           >
+            <option value={Kappale.Kappale_3}>{Kappale.Kappale_3}</option>
+            <option value={Kappale.Kappale_4}>{Kappale.Kappale_4}</option>
             <option value={Kappale.Kappale_5}>{Kappale.Kappale_5}</option>
             <option value={Kappale.Kappale_6}>{Kappale.Kappale_6}</option>
             <option value={Kappale.Kappale_7}>{Kappale.Kappale_7}</option>
