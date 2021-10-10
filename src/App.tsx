@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import _ from "lodash";
 import "./App.css";
 
@@ -8,6 +8,7 @@ enum Kieli {
 }
 
 enum Kappale {
+  MesAnimaux = "Mes animaux",
   EnClasse = "En classe",
   OuEstMaGomme = "Où est ma gonne?",
 }
@@ -15,6 +16,28 @@ enum Kappale {
 type Sana = { fi: string; fr: string };
 
 const kappaleet: Record<Kappale, Array<Sana>> = {
+  [Kappale.MesAnimaux]: [
+    { fi: "Onko sinulla koira?", fr: "Tu as un chien?" },
+    { fi: "eläimet", fr: "les animaux" },
+    { fi: "minun eläimeni", fr: "mes animaux" },
+    { fi: "piente lampaat", fr: "les petits moutons" },
+    { fi: "pieni", fr: "petit, petite" },
+    { fi: "Ei", fr: "Non." },
+    { fi: "Minulla ei ole...", fr: "Je n'ai pas de..." },
+    { fi: "Katsokaa!", fr: "Regardez!" },
+    { fi: "lampaita", fr: "des moutons" },
+    { fi: "ja", fr: "et" },
+    { fi: "lehmiä", fr: "des vaches" },
+    { fi: "Joo. Kyllä.", fr: "Oui!" },
+    { fi: "koiria", fr: "des chiens" },
+    { fi: "kissoja", fr: "des chats" },
+    { fi: "Oi!", fr: "Oh!" },
+    { fi: "Ne ovat niin söpöjä.", fr: "Ils sont tellements jolis." },
+    { fi: "ne ovat", fr: "ils sont" },
+    { fi: "niin", fr: "tellement" },
+    { fi: "sievä, söpö", fr: "joli, jolie" },
+    { fi: "Hän on nimeltään", fr: "Il s'appelle" },
+  ],
   [Kappale.EnClasse]: [
     { fi: "koulussa", fr: "à l'école" },
     { fi: "koulu", fr: "une école" },
@@ -79,7 +102,7 @@ function App() {
   const [näytäSana, asetaNäytäSana] = useState<boolean>(false);
   const [kieli, asetaKieli] = useState<Kieli>(Kieli.Suomi);
 
-  const siirrySeuraavaanSanaan = () => {
+  const siirrySeuraavaanSanaan = useCallback(() => {
     const jaljellaOlevatSanat = sanat.filter((s) => s.fi !== sana.fi);
     if (jaljellaOlevatSanat.length === 0) {
       asetaPeliLoppu(true);
@@ -89,25 +112,25 @@ function App() {
     asetaSanat(jaljellaOlevatSanat);
     asetaSana(jaljellaOlevatSanat[0]);
     asetaNäytäSana(false);
-  };
+  }, [sanat, sana]);
 
-  const tiedanPainike = () => {
+  const tiedanPainike = useCallback(() => {
     if (peliLoppu) {
       return;
     }
     asetaTiedetyt([...tiedetyt, sana]);
     asetaNäytäSana(true);
-  };
+  }, [peliLoppu, tiedetyt, sana]);
 
-  const enTiedanPainike = () => {
+  const enTiedanPainike = useCallback(() => {
     if (peliLoppu) {
       return;
     }
     asetaEiTiedetyt([...eiTiedetyt, sana]);
     asetaNäytäSana(true);
-  };
+  }, [peliLoppu, eiTiedetyt, sana]);
 
-  const aloitaPeliAlusta = () => {
+  const aloitaPeliAlusta = useCallback(() => {
     const uudetSanat = _.shuffle(kappaleet[kappale]);
     asetaSanat(uudetSanat);
     asetaKaikkiSanat(uudetSanat);
@@ -116,9 +139,9 @@ function App() {
     asetaEiTiedetyt([]);
     asetaNäytäSana(false);
     asetaPeliLoppu(false);
-  };
+  }, [kappale]);
 
-  const kertaaVäärinMenneet = () => {
+  const kertaaVäärinMenneet = useCallback(() => {
     if (eiTiedetyt.length === 0) {
       aloitaPeliAlusta();
     }
@@ -129,23 +152,38 @@ function App() {
     asetaEiTiedetyt([]);
     asetaNäytäSana(false);
     asetaPeliLoppu(false);
-  };
+  }, [eiTiedetyt, aloitaPeliAlusta]);
 
-  const vaihdaKieltä = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    asetaKieli(event.target.value as Kieli);
-    aloitaPeliAlusta();
-  };
+  const vaihdaKieltä = useCallback(
+    (event: React.ChangeEvent<HTMLSelectElement>) => {
+      asetaKieli(event.target.value as Kieli);
+    },
+    [asetaKieli]
+  );
 
-  const vaihdaKappaletta = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    asetaKappale(event.target.value as Kappale);
+  const vaihdaKappaletta = useCallback(
+    (event: React.ChangeEvent<HTMLSelectElement>) => {
+      asetaKappale(event.target.value as Kappale);
+    },
+    [asetaKappale]
+  );
+
+  useEffect(() => {
     aloitaPeliAlusta();
-  };
+  }, [kieli, kappale, aloitaPeliAlusta]);
 
   return (
     <div className="container">
       <div className="row justify-content-md-center">
         <div className="col col-lg-4">
           <h1>Sanakoe</h1>
+          <p>
+            Opetushallituksen{" "}
+            <a href="https://verkkokauppa.oph.fi/sivu/tuote/cadeau-1/24487792">
+              Caudeau 1
+            </a>{" "}
+            -kirjan kappaleiden sanojen epävirallinen sanakoe.
+          </p>
         </div>
       </div>
 
@@ -169,6 +207,7 @@ function App() {
             onChange={vaihdaKappaletta}
             value={kappale}
           >
+            <option value={Kappale.MesAnimaux}>{Kappale.MesAnimaux}</option>
             <option value={Kappale.EnClasse}>{Kappale.EnClasse}</option>
             <option value={Kappale.OuEstMaGomme}>{Kappale.OuEstMaGomme}</option>
           </select>
