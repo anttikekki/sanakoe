@@ -8,15 +8,15 @@ enum Kieli {
 }
 
 enum Kappale {
-  MesAnimaux = "Mes animaux",
-  EnClasse = "En classe",
-  OuEstMaGomme = "Où est ma gonne?",
+  Kappale_5 = "5. Tu as un chien ?",
+  Kappale_6 = "6. À l’école",
+  Kappale_7 = "7. Les couleurs",
 }
 
 type Sana = { fi: string; fr: string };
 
 const kappaleet: Record<Kappale, Array<Sana>> = {
-  [Kappale.MesAnimaux]: [
+  [Kappale.Kappale_5]: [
     { fi: "Onko sinulla koira?", fr: "Tu as un chien?" },
     { fi: "eläimet", fr: "les animaux" },
     { fi: "minun eläimeni", fr: "mes animaux" },
@@ -38,7 +38,7 @@ const kappaleet: Record<Kappale, Array<Sana>> = {
     { fi: "sievä, söpö", fr: "joli, jolie" },
     { fi: "Hän on nimeltään", fr: "Il s'appelle" },
   ],
-  [Kappale.EnClasse]: [
+  [Kappale.Kappale_6]: [
     { fi: "koulussa", fr: "à l'école" },
     { fi: "koulu", fr: "une école" },
     { fi: "koulutarvikkeet", fr: "le matèriel scolaire" },
@@ -65,7 +65,7 @@ const kappaleet: Record<Kappale, Array<Sana>> = {
     { fi: "viisitoista", fr: "quinze" },
     { fi: "lasketaan ne", fr: "on les compte" },
   ],
-  [Kappale.OuEstMaGomme]: [
+  [Kappale.Kappale_7]: [
     { fi: "värit", fr: "les couleurs" },
     { fi: "Minkä värinen se on?", fr: "C'est de quelle couleur?" },
     { fi: "eläintaulu", fr: "chanson des animaux" },
@@ -92,7 +92,7 @@ const kappaleet: Record<Kappale, Array<Sana>> = {
 };
 
 function App() {
-  const [kappale, asetaKappale] = useState<Kappale>(Kappale.EnClasse);
+  const [kappale, asetaKappale] = useState<Kappale>(Kappale.Kappale_5);
   const [kaikkiSanat, asetaKaikkiSanat] = useState<Array<Sana>>([]);
   const [sanat, asetaSanat] = useState<Array<Sana>>([]);
   const [sana, asetaSana] = useState<Sana>(undefined as unknown as Sana);
@@ -207,9 +207,9 @@ function App() {
             onChange={vaihdaKappaletta}
             value={kappale}
           >
-            <option value={Kappale.MesAnimaux}>{Kappale.MesAnimaux}</option>
-            <option value={Kappale.EnClasse}>{Kappale.EnClasse}</option>
-            <option value={Kappale.OuEstMaGomme}>{Kappale.OuEstMaGomme}</option>
+            <option value={Kappale.Kappale_5}>{Kappale.Kappale_5}</option>
+            <option value={Kappale.Kappale_6}>{Kappale.Kappale_6}</option>
+            <option value={Kappale.Kappale_7}>{Kappale.Kappale_7}</option>
           </select>
         </div>
       </div>
