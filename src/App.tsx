@@ -13,7 +13,7 @@ import { SanojaJäljellä } from "./components/SanojaJäljellä";
 
 function App() {
   const [kappale, asetaKappale] = useState<Kappale>(
-    Object.values(Kappale)[Object.values(Kappale).length - 1]
+    () => Object.values(Kappale)[Object.values(Kappale).length - 1]
   );
   const [kaikkiSanat, asetaKaikkiSanat] = useState<Array<Sana>>([]);
   const [sanat, asetaSanat] = useState<Array<Sana>>([]);
