@@ -13,6 +13,7 @@ enum Kappale {
   Kappale_5 = "5. Tu as un chien ?",
   Kappale_6 = "6. À l’école",
   Kappale_7 = "7. Les couleurs",
+  Kappale_8 = "8. Qu'est-ce que fais",
 }
 
 type Sana = { fi: string; fr: string };
@@ -134,6 +135,36 @@ const kappaleet: Record<Kappale, Array<Sana>> = {
     { fi: "Mennäänkö sinne?", fr: "On y va?" },
     { fi: "nopeasti", fr: "vite" },
   ],
+  [Kappale.Kappale_8]: [
+    { fr: "le temps libre", fi: "vapaa-aika" },
+    { fr: "les loisirs", fi: "harrastukset" },
+    { fr: "Action!", fi: "Toimintaa!" },
+    { fr: "Qu'est-ce que tu fais?", fi: "Mitä sinä teet?" },
+    { fr: "dans un park", fi: "puistossa" },
+    { fr: "un parc", fi: "puisto" },
+    { fr: "un e tablette", fi: "tablettitietokone" },
+    { fr: "chouette", fi: "kiva" },
+    { fr: "gagner", fi: "kiva" },
+    { fr: "trop", fi: "liian,liikaa" },
+    { fr: "difficile", fi: "vaikea" },
+    { fr: "avec moi", fi: "kanssani" },
+    { fr: "fatigué, fatiguée", fi: "väynyt" },
+    { fr: "là-bas", fi: "tuolla" },
+    { fr: "jouer au rugby", fi: "pelata rugbyä" },
+    { fr: "dans une équipe", fi: "joukkueessa" },
+    { fr: "une équipe", fi: "joukkue" },
+    { fr: "cool", fi: "tosi hieno" },
+    { fr: "bien", fi: "hyvin" },
+    { fr: "pas mal", fi: "ei hullummin" },
+    { fr: "mal", fi: "huonosti" },
+    { fr: "rigoler", fi: "hassutella, pitää hauskaa" },
+    { fr: "faire", fi: "tehdä" },
+    { fr: "je fais", fi: "minä teen" },
+    { fr: "tu fais ", fi: "sinä teet" },
+    { fr: "il fais", fi: "hän tekee" },
+    { fr: "elle fais", fi: "hän tekee" },
+    { fr: "une chanson", fi: "laulu" },
+  ],
 };
 
 function App() {
@@ -252,11 +283,11 @@ function App() {
             onChange={vaihdaKappaletta}
             value={kappale}
           >
-            <option value={Kappale.Kappale_3}>{Kappale.Kappale_3}</option>
-            <option value={Kappale.Kappale_4}>{Kappale.Kappale_4}</option>
-            <option value={Kappale.Kappale_5}>{Kappale.Kappale_5}</option>
-            <option value={Kappale.Kappale_6}>{Kappale.Kappale_6}</option>
-            <option value={Kappale.Kappale_7}>{Kappale.Kappale_7}</option>
+            {Object.values(Kappale).map((kappale) => (
+              <option key={kappale} value={kappale}>
+                {kappale}
+              </option>
+            ))}
           </select>
         </div>
       </div>
