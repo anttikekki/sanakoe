@@ -6,7 +6,7 @@ export const Otsikko: React.FunctionComponent = () => (
       <h1>Sanakoe</h1>
       <p>
         Opetushallituksen{" "}
-        <a href="https://verkkokauppa.oph.fi/sivu/tuote/cadeau-1/24487792">
+        <a href="https://www.oph.fi/fi/oppimateriaali/cadeau/cadeau-1">
           Caudeau 1
         </a>{" "}
         -kirjan kappaleiden sanojen epävirallinen sanakoe.
