@@ -1,23 +1,20 @@
 {
   "files": {
-    "main.css": "/sanakoe/static/css/main.bab0b925.chunk.css",
-    "main.js": "/sanakoe/static/js/main.84aae10d.chunk.js",
-    "main.js.map": "/sanakoe/static/js/main.84aae10d.chunk.js.map",
+    "main.js": "/sanakoe/static/js/main.d47153d2.chunk.js",
+    "main.js.map": "/sanakoe/static/js/main.d47153d2.chunk.js.map",
     "runtime-main.js": "/sanakoe/static/js/runtime-main.50e266dd.js",
     "runtime-main.js.map": "/sanakoe/static/js/runtime-main.50e266dd.js.map",
     "static/css/2.63ec5a3e.chunk.css": "/sanakoe/static/css/2.63ec5a3e.chunk.css",
-    "static/js/2.b306a822.chunk.js": "/sanakoe/static/js/2.b306a822.chunk.js",
-    "static/js/2.b306a822.chunk.js.map": "/sanakoe/static/js/2.b306a822.chunk.js.map",
+    "static/js/2.82359a00.chunk.js": "/sanakoe/static/js/2.82359a00.chunk.js",
+    "static/js/2.82359a00.chunk.js.map": "/sanakoe/static/js/2.82359a00.chunk.js.map",
     "index.html": "/sanakoe/index.html",
     "static/css/2.63ec5a3e.chunk.css.map": "/sanakoe/static/css/2.63ec5a3e.chunk.css.map",
-    "static/css/main.bab0b925.chunk.css.map": "/sanakoe/static/css/main.bab0b925.chunk.css.map",
-    "static/js/2.b306a822.chunk.js.LICENSE.txt": "/sanakoe/static/js/2.b306a822.chunk.js.LICENSE.txt"
+    "static/js/2.82359a00.chunk.js.LICENSE.txt": "/sanakoe/static/js/2.82359a00.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.50e266dd.js",
     "static/css/2.63ec5a3e.chunk.css",
-    "static/js/2.b306a822.chunk.js",
-    "static/css/main.bab0b925.chunk.css",
-    "static/js/main.84aae10d.chunk.js"
+    "static/js/2.82359a00.chunk.js",
+    "static/js/main.d47153d2.chunk.js"
   ]
 }
