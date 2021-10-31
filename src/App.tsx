@@ -2,9 +2,19 @@ import React, { useCallback, useEffect, useState } from "react";
 import _ from "lodash";
 import { Kappale, kappaleet } from "./sanasto";
 import { Kieli, Sana } from "./types";
+import { KielenValinta } from "./components/KielenValinta";
+import { KappaleenValinta } from "./components/KappaleenValinta";
+import { Otsikko } from "./components/Otsikko";
+import { AloitusJaLopetuspainikkeet } from "./components/AloitusJaLopetuspainikkeet";
+import { Vastauspainikkeet } from "./components/Vastauspainikkeet";
+import { KysyttäväSana } from "./components/KysyttäväSana";
+import { Pistetilanne } from "./components/Pistetilanne";
+import { SanojaJäljellä } from "./components/SanojaJäljellä";
 
 function App() {
-  const [kappale, asetaKappale] = useState<Kappale>(Kappale.Kappale_5);
+  const [kappale, asetaKappale] = useState<Kappale>(
+    Object.values(Kappale)[Object.values(Kappale).length - 1]
+  );
   const [kaikkiSanat, asetaKaikkiSanat] = useState<Array<Sana>>([]);
   const [sanat, asetaSanat] = useState<Array<Sana>>([]);
   const [sana, asetaSana] = useState<Sana>(undefined as unknown as Sana);
@@ -86,177 +96,48 @@ function App() {
 
   return (
     <div className="container">
-      <div className="row justify-content-md-center">
-        <div className="col col-lg-4">
-          <h1>Sanakoe</h1>
-          <p>
-            Opetushallituksen{" "}
-            <a href="https://verkkokauppa.oph.fi/sivu/tuote/cadeau-1/24487792">
-              Caudeau 1
-            </a>{" "}
-            -kirjan kappaleiden sanojen epävirallinen sanakoe.
-          </p>
-        </div>
-      </div>
+      <Otsikko />
+      <KielenValinta kieli={kieli} vaihdaKieltä={vaihdaKieltä} />
+      <br />
+      <KappaleenValinta kappale={kappale} vaihdaKappaletta={vaihdaKappaletta} />
+      <br />
 
-      <div className="row justify-content-md-center">
-        <div className="col col-lg-4">
-          Sanojen kyselykieli:
-          <select className="form-select" onChange={vaihdaKieltä} value={kieli}>
-            <option value={Kieli.Suomi}>Kysy suomeksi</option>
-            <option value={Kieli.Ranska}>Kysy ranskaksi</option>
-          </select>
-        </div>
-      </div>
+      <SanojaJäljellä
+        peliLoppu={peliLoppu}
+        kysyttävänSananJärjestysnumero={kaikkiSanat.length - sanat.length + 1}
+        kaikkienSanojenLukumäärä={kaikkiSanat.length}
+      />
+
+      <KysyttäväSana
+        peliLoppu={peliLoppu}
+        näytäSana={näytäSana}
+        kieli={kieli}
+        sana={sana}
+      />
 
       <br />
 
-      <div className="row justify-content-md-center">
-        <div className="col col-lg-4">
-          Kappale:
-          <select
-            className="form-select"
-            onChange={vaihdaKappaletta}
-            value={kappale}
-          >
-            {Object.values(Kappale).map((kappale) => (
-              <option key={kappale} value={kappale}>
-                {kappale}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
+      <Vastauspainikkeet
+        peliLoppu={peliLoppu}
+        näytäSana={näytäSana}
+        tiedanPainike={tiedanPainike}
+        enTiedanPainike={enTiedanPainike}
+        siirrySeuraavaanSanaan={siirrySeuraavaanSanaan}
+      />
 
       <br />
 
-      {!peliLoppu && (
-        <div className="row justify-content-md-center">
-          <div className="col col-lg-4">
-            Sana {kaikkiSanat.length - sanat.length + 1}/{kaikkiSanat.length}
-          </div>
-        </div>
-      )}
+      <Pistetilanne
+        tiedettyjenSanojenLukumaara={tiedetyt.length}
+        väärinMenneidenSanojenLukumaara={eiTiedetyt.length}
+      />
 
-      {!peliLoppu && !näytäSana && (
-        <div className="row justify-content-md-center">
-          <div className="col col-lg-4">
-            <div className="card">
-              <div className="card-body">
-                {kieli === Kieli.Suomi ? sana.fi : sana.fr}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {!peliLoppu && näytäSana && (
-        <div className="row justify-content-md-center">
-          <div className="col col-lg-2">
-            <div className="card">
-              <div className="card-body">
-                {kieli === Kieli.Suomi ? sana.fi : sana.fr}
-              </div>
-            </div>
-          </div>
-          <div className="col col-lg-2">
-            <div className="card">
-              <div className="card-body">
-                {kieli === Kieli.Suomi ? sana.fr : sana.fi}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      <br />
-
-      {!peliLoppu && !näytäSana && (
-        <div className="row justify-content-md-center">
-          <div className="col col-lg-2">
-            <button
-              type="button"
-              className="btn btn-outline-success btn-lg"
-              onClick={() => tiedanPainike()}
-            >
-              Tiedän
-            </button>
-          </div>
-          <div className="col col-lg-2">
-            <button
-              type="button"
-              className="btn btn-outline-danger btn-lg"
-              onClick={() => enTiedanPainike()}
-            >
-              En tiedä
-            </button>
-          </div>
-        </div>
-      )}
-
-      {!peliLoppu && näytäSana && (
-        <div className="row justify-content-md-center">
-          <div className="col col-lg-2">
-            <button
-              type="button"
-              className="btn btn-primary btn-lg"
-              onClick={() => siirrySeuraavaanSanaan()}
-            >
-              Seuraava sana
-            </button>
-          </div>
-        </div>
-      )}
-
-      <br />
-
-      <div className="row justify-content-md-center">
-        <div className="col col-lg-4">
-          <p>Oikein: {tiedetyt.length}</p>
-          <p>Väärin: {eiTiedetyt.length}</p>
-        </div>
-      </div>
-
-      {!peliLoppu && (
-        <div className="row justify-content-md-center">
-          <div className="col col-lg-4">
-            <button
-              type="button"
-              className="btn btn-warning btn-lg"
-              onClick={() => aloitaPeliAlusta()}
-            >
-              Aloita alusta
-            </button>
-          </div>
-        </div>
-      )}
-
-      <br />
-
-      {peliLoppu && (
-        <div className="row justify-content-md-center">
-          <div className="col col-lg-2">
-            <button
-              type="button"
-              className="btn btn-primary btn-lg"
-              onClick={() => aloitaPeliAlusta()}
-            >
-              Aloita alusta
-            </button>
-          </div>
-          {eiTiedetyt.length > 0 && (
-            <div className="col col-lg-2">
-              <button
-                type="button"
-                className="btn btn-primary btn-lg"
-                onClick={() => kertaaVäärinMenneet()}
-              >
-                Kertaa väärin menneet
-              </button>
-            </div>
-          )}
-        </div>
-      )}
+      <AloitusJaLopetuspainikkeet
+        peliLoppu={peliLoppu}
+        väärinMenneidenSanojenLukumäärä={eiTiedetyt.length}
+        aloitaPeliAlusta={aloitaPeliAlusta}
+        kertaaVäärinMenneet={kertaaVäärinMenneet}
+      />
     </div>
   );
 }
