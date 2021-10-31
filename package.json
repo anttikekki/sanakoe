@@ -1,7 +1,7 @@
 {
   "name": "sanakoe",
   "description": "Opetushallituksen Caudeau 1 -kirjan kappaleiden sanojen epävirallinen sanakoe",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "homepage": "https://anttikekki.github.io/sanakoe",
   "dependencies": {
