@@ -8,8 +8,12 @@ export const Otsikko: React.FunctionComponent = () => (
         Opetushallituksen{" "}
         <a href="https://www.oph.fi/fi/oppimateriaali/cadeau/cadeau-1">
           Caudeau 1
+        </a>
+        - ja{" "}
+        <a href="https://www.oph.fi/fi/oppimateriaali/cadeau/cadeau-2">
+          Caudeau 2
         </a>{" "}
-        -kirjan kappaleiden sanojen epävirallinen sanakoe.
+        -kirjojen kappaleiden sanojen epävirallinen sanakoe.
       </p>
     </div>
   </div>

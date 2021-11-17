@@ -1,16 +1,53 @@
 import { Sana } from "./types";
 
-export enum Kappale {
+export enum Cadeau_1 {
+  Kappale_2 = "2. Bonjour",
   Kappale_3 = "3. Tu as quel âge ?",
   Kappale_4 = "4. Tu as des frères et sœurs ?",
   Kappale_5 = "5. Tu as un chien ?",
   Kappale_6 = "6. À l’école",
   Kappale_7 = "7. Les couleurs",
   Kappale_8 = "8. Qu'est-ce que fais",
+  Kappale_9_1 = "9. C’est la fête - Joyeux Noël !",
 }
 
+export enum Cadeau_2 {
+  Kappale_1 = "1. Vous êtes prêts ?",
+}
+
+export type Kappale = Cadeau_1 | Cadeau_2;
+
 export const kappaleet: Record<Kappale, Array<Sana>> = {
-  [Kappale.Kappale_3]: [
+  [Cadeau_1.Kappale_2]: [
+    { fr: "bonjour", fi: "huomenta, hyvää päivää" },
+    { fr: "les salutations", fi: "tervehdykset" },
+    { fr: "salut", fi: "hei, moi" },
+    { fr: "Ça va ?", fi: "Mitä kuuluu?" },
+    { fr: "Ça va.", fi: "Kuuluu hyvää." },
+    { fr: "Comment allez-vous?", fi: "Kuinka voitte?" },
+    { fr: "madame", fi: "rouva" },
+    { fr: "monsieur", fi: "herra" },
+    { fr: "À plus tard !", fi: "Nähdään sitten (myöhemmin)!" },
+    { fr: "À bientôt !", fi: "Nähdää pian!" },
+    { fr: "Au revoir", fi: "näkemiin" },
+    { fr: "la rentrée", fi: "koulun alku" },
+    { fr: "je m'appelle", fi: "minun nimeni on" },
+    { fr: "Et toi ?", fi: "Entä sinä?" },
+    { fr: "moi", fi: "minä (itseä korostava sana)" },
+    { fr: "je", fi: "minä" },
+    { fr: "je suis", fi: "minä olen" },
+    { fr: "Tu t'appelles comment ?", fi: "Mikä sinun nimesi on?" },
+    { fr: "tu", fi: "sinä" },
+    { fr: "tu es", fi: "sinä olet" },
+    { fr: "voici", fi: "tässä on" },
+    { fr: "la maitresse", fi: "opettaja" },
+    { fr: "les enfants", fi: "lapset" },
+    { fr: "Comment ça va ?", fi: "Mitä kuuluu?" },
+    { fr: "bien", fi: "hyvää" },
+    { fr: "merci", fi: "kiitos" },
+    { fr: "la récré", fi: "välitunti" },
+  ],
+  [Cadeau_1.Kappale_3]: [
     { fi: "Kuinka vanha olet?", fr: "Tu as quel âge?" },
     { fi: "numerot", fr: "les nombres" },
     { fi: "Hyvää syntymäpäivää?", fr: "Bon anniversaire!" },
@@ -34,7 +71,7 @@ export const kappaleet: Record<Kappale, Array<Sana>> = {
     { fi: "hänellä on (pojasta puhuttaessa)", fr: "il a" },
     { fi: "hänellä on (tytöstä puhuttaessa)", fr: "elle a" },
   ],
-  [Kappale.Kappale_4]: [
+  [Cadeau_1.Kappale_4]: [
     { fi: "Onko sinulla sisaruksia?", fr: "Tu as des frères et sœurs?" },
     { fi: "minun perheeni", fr: "ma famille" },
     { fi: "perhevalokuvia", fr: "photos de famille" },
@@ -53,7 +90,7 @@ export const kappaleet: Record<Kappale, Array<Sana>> = {
     { fi: "hän on (poika)", fr: "il est" },
     { fi: "hän on (tyttö)", fr: "tu es" },
   ],
-  [Kappale.Kappale_5]: [
+  [Cadeau_1.Kappale_5]: [
     { fi: "Onko sinulla koira?", fr: "Tu as un chien?" },
     { fi: "eläimet", fr: "les animaux" },
     { fi: "minun eläimeni", fr: "mes animaux" },
@@ -75,7 +112,7 @@ export const kappaleet: Record<Kappale, Array<Sana>> = {
     { fi: "sievä, söpö", fr: "joli, jolie" },
     { fi: "Hän on nimeltään", fr: "Il s'appelle" },
   ],
-  [Kappale.Kappale_6]: [
+  [Cadeau_1.Kappale_6]: [
     { fi: "koulussa", fr: "à l'école" },
     { fi: "koulu", fr: "une école" },
     { fi: "koulutarvikkeet", fr: "le matèriel scolaire" },
@@ -102,7 +139,7 @@ export const kappaleet: Record<Kappale, Array<Sana>> = {
     { fi: "viisitoista", fr: "quinze" },
     { fi: "lasketaan ne", fr: "on les compte" },
   ],
-  [Kappale.Kappale_7]: [
+  [Cadeau_1.Kappale_7]: [
     { fi: "värit", fr: "les couleurs" },
     { fi: "Minkä värinen se on?", fr: "C'est de quelle couleur?" },
     { fi: "eläintaulu", fr: "chanson des animaux" },
@@ -126,7 +163,7 @@ export const kappaleet: Record<Kappale, Array<Sana>> = {
     { fi: "Mennäänkö sinne?", fr: "On y va?" },
     { fi: "nopeasti", fr: "vite" },
   ],
-  [Kappale.Kappale_8]: [
+  [Cadeau_1.Kappale_8]: [
     { fr: "le temps libre", fi: "vapaa-aika" },
     { fr: "les loisirs", fi: "harrastukset" },
     { fr: "Action!", fi: "Toimintaa!" },
@@ -155,5 +192,57 @@ export const kappaleet: Record<Kappale, Array<Sana>> = {
     { fr: "il fais", fi: "hän tekee" },
     { fr: "elle fais", fi: "hän tekee" },
     { fr: "une chanson", fi: "laulu" },
+  ],
+  [Cadeau_1.Kappale_9_1]: [
+    { fr: "Joyeux Noël !", fi: "Iloista joulua!" },
+    { fr: "Noël", fi: "joulu" },
+    { fr: "le sapin", fi: "kuusi" },
+    { fr: "la guirlande", fi: "koristenauha" },
+    { fr: "la boule", fi: "(joulu)pallo" },
+    { fr: "l'étoile", fi: "tähti" },
+    { fr: "l'ange", fi: "enkeli" },
+    { fr: "la bougie", fi: "kynttilä" },
+    { fr: "la crèche de Noël", fi: "jouluseimi" },
+    { fr: "le lutin", fi: "tonttu" },
+    { fr: "le renne", fi: "poro" },
+    { fr: "le père Noël", fi: "joulupukki" },
+    { fr: "le traineau", fi: "reki" },
+    { fr: "la fête de Noël", fi: "joulujuhla" },
+    { fr: "beau, belle", fi: "kaunis" },
+    { fr: "on aime", fi: "tykätään" },
+    { fr: "la nouvelle année", fi: "uusi vuosi" },
+    { fr: "la buche de Noël", fi: "jouluhalko" },
+    { fr: "sur le sapin", fi: "kuuseen, kuusessa" },
+  ],
+  [Cadeau_2.Kappale_1]: [
+    { fr: "vous êtes", fi: "te olette" },
+    { fr: "prêt, prête", fi: "valmis" },
+    { fr: "C'est moi !", fi: "Tässäpä minä!" },
+    { fr: "mon, ma", fi: "minun" },
+    { fr: "un âge", fi: "ikä" },
+    { fr: "un professeur", fi: "opettaja (mies)" },
+    { fr: "une professeure", fi: "opettaja (nainen)" },
+    { fr: "la rentrèe", fi: "koulun alku" },
+    { fr: "un copain, une copine", fi: "kaveri" },
+    { fr: "encore", fi: "vielä" },
+    { fr: "les autres", fi: "muut" },
+    { fr: "un départ", fi: "lähtö" },
+    { fr: "un crayon", fi: "lyijykynä" },
+    { fr: "danser", fi: "tanssia" },
+    { fr: "vingt", fi: "kaksikymmentä" },
+    { fr: "une étoile", fi: "tähti" },
+    { fr: "dessiner (I)", fi: "piirtää" },
+    { fr: "il", fi: "hän (pojasta)" },
+    { fr: "un chat", fi: "kissa" },
+    { fr: "douze", fi: "kaksitoista" },
+    { fr: "un sac à dos", fi: "reppo" },
+    { fr: "un lézard", fi: "lisko" },
+    { fr: "manger", fi: "syödä" },
+    { fr: "dix-huit", fi: "kahdeksantoista" },
+    { fr: "un chien", fi: "koira" },
+    { fr: "seize", fi: "kuusitoista" },
+    { fr: "elle", fi: "hän (tytöstä)" },
+    { fr: "une gomme", fi: "kumi" },
+    { fr: "une arrivée", fi: "maali" },
   ],
 };

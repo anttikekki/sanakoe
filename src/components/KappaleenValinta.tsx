@@ -1,5 +1,5 @@
 import React from "react";
-import { Kappale } from "../sanasto";
+import { Kappale, Cadeau_1, Cadeau_2 } from "../sanasto";
 
 export const KappaleenValinta: React.FunctionComponent<{
   kappale: Kappale;
@@ -13,11 +13,20 @@ export const KappaleenValinta: React.FunctionComponent<{
         onChange={vaihdaKappaletta}
         value={kappale}
       >
-        {Object.values(Kappale).map((kappale) => (
-          <option key={kappale} value={kappale}>
-            {kappale}
-          </option>
-        ))}
+        <optgroup label="Caudeau 1">
+          {Object.values(Cadeau_1).map((kappale) => (
+            <option key={kappale} value={kappale}>
+              {kappale}
+            </option>
+          ))}
+        </optgroup>
+        <optgroup label="Caudeau 2">
+          {Object.values(Cadeau_2).map((kappale) => (
+            <option key={kappale} value={kappale}>
+              {kappale}
+            </option>
+          ))}
+        </optgroup>
       </select>
     </div>
   </div>

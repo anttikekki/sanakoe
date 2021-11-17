@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import _ from "lodash";
-import { Kappale, kappaleet } from "./sanasto";
+import { Kappale, kappaleet, Cadeau_2 } from "./sanasto";
 import { Kieli, Sana } from "./types";
 import { KielenValinta } from "./components/KielenValinta";
 import { KappaleenValinta } from "./components/KappaleenValinta";
@@ -13,7 +13,7 @@ import { SanojaJäljellä } from "./components/SanojaJäljellä";
 
 function App() {
   const [kappale, asetaKappale] = useState<Kappale>(
-    () => Object.values(Kappale)[Object.values(Kappale).length - 1]
+    () => Object.values(Cadeau_2)[Object.values(Cadeau_2).length - 1]
   );
   const [kaikkiSanat, asetaKaikkiSanat] = useState<Array<Sana>>([]);
   const [sanat, asetaSanat] = useState<Array<Sana>>([]);
