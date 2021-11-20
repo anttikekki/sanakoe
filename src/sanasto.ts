@@ -172,7 +172,7 @@ export const kappaleet: Record<Kappale, Array<Sana>> = {
     { fr: "un parc", fi: "puisto" },
     { fr: "un e tablette", fi: "tablettitietokone" },
     { fr: "chouette", fi: "kiva" },
-    { fr: "gagner", fi: "kiva" },
+    { fr: "gagner", fi: "voittaa" },
     { fr: "trop", fi: "liian,liikaa" },
     { fr: "difficile", fi: "vaikea" },
     { fr: "avec moi", fi: "kanssani" },
