@@ -235,7 +235,7 @@ export const kappaleet: Record<Kappale, Array<Sana>> = {
     { fr: "il", fi: "hän (pojasta)" },
     { fr: "un chat", fi: "kissa" },
     { fr: "douze", fi: "kaksitoista" },
-    { fr: "un sac à dos", fi: "reppo" },
+    { fr: "un sac à dos", fi: "reppu" },
     { fr: "un lézard", fi: "lisko" },
     { fr: "manger", fi: "syödä" },
     { fr: "dix-huit", fi: "kahdeksantoista" },
