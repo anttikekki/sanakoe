@@ -19,6 +19,8 @@ export enum Cadeau_1 {
 
 export enum Cadeau_2 {
   Kappale_1 = "1. Vous êtes prêts ?",
+  Kappale_2 = "2. Tu as faim ?",
+  Kappale_2a = "2. Tu as faim ? - Des fruits et des baies",
 }
 
 export type Kappale = Cadeau_1 | Cadeau_2;
@@ -334,5 +336,43 @@ export const kappaleet: Record<Kappale, Array<Sana>> = {
     { fr: "elle", fi: "hän (tytöstä)" },
     { fr: "une gomme", fi: "kumi" },
     { fr: "une arrivée", fi: "maali" },
+  ],
+  [Cadeau_2.Kappale_2]: [
+    { fr: "un fruit", fi: "hedelmä" },
+    { fr: "une baie", fi: "marja" },
+    { fr: "pourquoi pas", fi: "miksipä ei" },
+    { fr: "pas maintenant", fi: "ei nyt" },
+    { fr: "dans une pâtisserie", fi: "leipomossa" },
+    { fr: "une pâtisserie", fi: "leipomo, leivonnainen" },
+    { fr: "avoir faim", fi: "olla nälkä" },
+    { fr: "qu'est-ce que", fi: "mikä, mitä" },
+    { fr: "acheter (I)", fi: "ostaa" },
+    { fr: "moi aussi", fi: "minä myös, minulla myös" },
+    { fr: "je voudrais", fi: "haluaisin" },
+    { fr: "un éclair", fi: "éclair-leivos, salama" },
+    { fr: "bien sûr", fi: "totta kai" },
+    { fr: "avoir soif", fi: "olla jano" },
+    { fr: "un jus", fi: "mehu" },
+    { fr: "un jus de fruit", fi: "hedelmämehu" },
+    { fr: "une tartelette", fi: "pieni torttu" },
+    { fr: "une tartelette aux citrons", fi: "pieni sitruunatorttu" },
+    { fr: "s'il vous plait", fi: "kiitos (pyydettäessä)" },
+    { fr: "avec ceci", fi: "tämän kanssa" },
+    { fr: "pour moi", fi: "minulle" },
+    { fr: "un euro", fi: "euro" },
+  ],
+  [Cadeau_2.Kappale_2a]: [
+    { fr: "une pomme", fi: "omena" },
+    { fr: "une banane", fi: "banaani" },
+    { fr: "une mure", fi: "karhunvatukka" },
+    { fr: "une fraise", fi: "mansikka" },
+    { fr: "une cerise", fi: "kirsikka" },
+    { fr: "une poire", fi: "päärynä" },
+    { fr: "une myrtille", fi: "mustikka" },
+    { fr: "une ananas", fi: "ananas" },
+    { fr: "un kiwi", fi: "kiivi" },
+    { fr: "une orange", fi: "appelssiini" },
+    { fr: "une franboise", fi: "vadelma" },
+    { fr: "une pêche", fi: "persikka" },
   ],
 };
