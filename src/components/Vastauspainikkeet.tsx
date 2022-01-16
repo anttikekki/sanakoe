@@ -19,7 +19,8 @@ export const Vastauspainikkeet: React.FunctionComponent<{
         <div className="col col-lg-2">
           <button
             type="button"
-            className="btn btn-outline-success btn-lg"
+            className="btn btn-success btn-lg"
+            style={{ width: "100%" }}
             onClick={() => tiedanPainike()}
           >
             Tiedän
@@ -28,7 +29,8 @@ export const Vastauspainikkeet: React.FunctionComponent<{
         <div className="col col-lg-2">
           <button
             type="button"
-            className="btn btn-outline-danger btn-lg"
+            className="btn btn-danger btn-lg"
+            style={{ width: "100%" }}
             onClick={() => enTiedanPainike()}
           >
             En tiedä
@@ -39,10 +41,11 @@ export const Vastauspainikkeet: React.FunctionComponent<{
 
     {!peliLoppu && näytäSana && (
       <div className="row justify-content-md-center">
-        <div className="col col-lg-2">
+        <div className="col col-lg-4">
           <button
             type="button"
             className="btn btn-primary btn-lg"
+            style={{ width: "100%" }}
             onClick={() => siirrySeuraavaanSanaan()}
           >
             Seuraava sana
