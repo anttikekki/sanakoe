@@ -1,20 +1,13 @@
 {
   "files": {
-    "main.js": "/sanakoe/static/js/main.6226d052.chunk.js",
-    "main.js.map": "/sanakoe/static/js/main.6226d052.chunk.js.map",
-    "runtime-main.js": "/sanakoe/static/js/runtime-main.50e266dd.js",
-    "runtime-main.js.map": "/sanakoe/static/js/runtime-main.50e266dd.js.map",
-    "static/css/2.63ec5a3e.chunk.css": "/sanakoe/static/css/2.63ec5a3e.chunk.css",
-    "static/js/2.f5227e64.chunk.js": "/sanakoe/static/js/2.f5227e64.chunk.js",
-    "static/js/2.f5227e64.chunk.js.map": "/sanakoe/static/js/2.f5227e64.chunk.js.map",
+    "main.css": "/sanakoe/static/css/main.434d85ca.css",
+    "main.js": "/sanakoe/static/js/main.a7c3d025.js",
     "index.html": "/sanakoe/index.html",
-    "static/css/2.63ec5a3e.chunk.css.map": "/sanakoe/static/css/2.63ec5a3e.chunk.css.map",
-    "static/js/2.f5227e64.chunk.js.LICENSE.txt": "/sanakoe/static/js/2.f5227e64.chunk.js.LICENSE.txt"
+    "main.434d85ca.css.map": "/sanakoe/static/css/main.434d85ca.css.map",
+    "main.a7c3d025.js.map": "/sanakoe/static/js/main.a7c3d025.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.50e266dd.js",
-    "static/css/2.63ec5a3e.chunk.css",
-    "static/js/2.f5227e64.chunk.js",
-    "static/js/main.6226d052.chunk.js"
+    "static/css/main.434d85ca.css",
+    "static/js/main.a7c3d025.js"
   ]
 }
