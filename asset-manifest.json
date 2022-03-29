@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/sanakoe/static/css/main.434d85ca.css",
-    "main.js": "/sanakoe/static/js/main.83738640.js",
+    "main.css": "/sanakoe/static/css/main.8b0db0ad.css",
+    "main.js": "/sanakoe/static/js/main.e7a0debf.js",
     "index.html": "/sanakoe/index.html",
-    "main.434d85ca.css.map": "/sanakoe/static/css/main.434d85ca.css.map",
-    "main.83738640.js.map": "/sanakoe/static/js/main.83738640.js.map"
+    "main.8b0db0ad.css.map": "/sanakoe/static/css/main.8b0db0ad.css.map",
+    "main.e7a0debf.js.map": "/sanakoe/static/js/main.e7a0debf.js.map"
   },
   "entrypoints": [
-    "static/css/main.434d85ca.css",
-    "static/js/main.83738640.js"
+    "static/css/main.8b0db0ad.css",
+    "static/js/main.e7a0debf.js"
   ]
 }
