@@ -23,6 +23,7 @@ export enum Cadeau_2 {
   Kappale_2a = "2. Tu as faim ? - Des fruits et des baies",
   Kappale_3 = "3. À table",
   Kappale_3a = "3. À table - Bon appétit !",
+  Kappale_4 = "4. Les heures"
 }
 
 export type Kappale = Cadeau_1 | Cadeau_2;
@@ -422,5 +423,31 @@ export const kappaleet: Record<Kappale, Array<Sana>> = {
     { fr: "une salade", fi: "salaatti" },
     { fr: "un fromage", fi: "juusto" },
     { fr: "un yaourt", fi: "jugurtti" },
+  ],
+  [Cadeau_2.Kappale_4]: [
+    { fr: "Il est quelle heure?", fi: "Paljonko kello on?" },
+    { fr: "une journée du sport", fi: "urheilupäivä" },
+    { fr: "Cést...", fi: "On..." },
+    { fr: "vendredi", fi: "perjantai" },
+    { fr: "un matin", fi: "aamu" },
+    { fr: "une cour", fi: "piha" },
+    { fr: "ils attendent", fi: "he odottavat" },
+    { fr: "une activité", fi: "puuha, toiminta, tehtvä" },
+    { fr: "commencer", fi: "alkaa, aloittaa" },
+    { fr: "à neuf heures", fi: "klo 9" },
+    { fr: "comme activité", fi: "puuhana, tehtävänä" },
+    { fr: "par exemple", fi: "esimerkiksi" },
+    { fr: "le basket", fi: "koripallo" },
+    { fr: "le tennis", fi: "tennis" },
+    { fr: "Ce nést pas mal", fi: "Ei hassumpaa" },
+    { fr: "à quelle heure?", fi: "mihin aikaan?" },
+    { fr: "continuer", fi: "jatkaa" },
+    { fr: "Quelle journée sympa!", fi: "Ompa mahtava päivä!" },
+    { fr: "un sport", fi: "urheilu" },
+    { fr: "déjà", fi: "jo" },
+    { fr: "on va", fi: "mennään" },
+    { fr: "une pisine", fi: "uimahalli" },
+    { fr: "un plongeon", fi: "uimahyppy" },
+    { fr: "faire* des plongeons", fi: "tehdä uimahyppyjä" },
   ],
 };
