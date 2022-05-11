@@ -23,7 +23,9 @@ export enum Cadeau_2 {
   Kappale_2a = "2. Tu as faim ? - Des fruits et des baies",
   Kappale_3 = "3. À table",
   Kappale_3a = "3. À table - Bon appétit !",
-  Kappale_4 = "4. Les heures"
+  Kappale_4 = "4. Les heures",
+  Kappale_5 = "5. Les jours de la semaine",
+  Kappale_5a = "5. Les jours de la semaine - Des loisirs"
 }
 
 export type Kappale = Cadeau_1 | Cadeau_2;
@@ -450,4 +452,39 @@ export const kappaleet: Record<Kappale, Array<Sana>> = {
     { fr: "un plongeon", fi: "uimahyppy" },
     { fr: "faire* des plongeons", fi: "tehdä uimahyppyjä" },
   ],
+  [Cadeau_2.Kappale_5]: [
+    { fr: "les jours de la semaine", fi: "viikonpäivät" },
+    { fr: "un jour", fi: "päivä" },
+    { fr: "une semaine", fi: "viikko" },
+    { fr: "cette semaine", fi: "tällä viikolla" },
+    { fr: "chez", fi: "luona" },
+    { fr: "leur", fi: "heidän" },
+    { fr: "un devoir", fi: "läksy" },
+    { fr: "organiser (I)", fi: "järjestellä" },
+    { fr: "une semaine de vacances", fi: "lomaviikko" },
+    { fr: "un dessin", fi: "piirrustus" },
+    { fr: "français, française", fi: "ranskalainen" },
+    { fr: "lundi", fi: "maaanatai" },
+    { fr: "mardi", fi: "tiistai" },
+    { fr: "mercredi", fi: "keskiviikko" },
+    { fr: "jeudi", fi: "torstai" },
+    { fr: "vendredi", fi: "perjantai" },
+    { fr: "samedi", fi: "lauantai" },
+    { fr: "dimanche", fi: "sunnuntai" },
+    { fr: "Il fait beau.", fi: "On kaunis ilma." },
+    { fr: "Il neige", fi: "Sataa lunta." },
+  ],
+  [Cadeau_2.Kappale_5a]: [
+    { fr: "faire* du parkour", fi: "parkour" },
+    { fr: "faire* de la voile", fi: "purjehtia" },
+    { fr: "faire* du ski", fi: "lasketella" },
+    { fr: "jouer (I) au rugby", fi: "pelata rugbyä" },
+    { fr: "jouer (I) au basket", fi: "pelata koripalloa" },
+    { fr: "faire* du judo", fi: "judo" },
+    { fr: "jouer (I) au tennis", fi: "pelata tennistä" },
+    { fr: "danser (I)", fi: "tanssia" },
+    { fr: "jouer (I) du piano", fi: "soittaa pianoa" },
+    { fr: "faire* voler un cerf-volant", fi: "lennättää leijaa" },
+    { fr: "faire* du monocycle", fi: "ajaa yksipyöraisellä" },
+  ]
 };
