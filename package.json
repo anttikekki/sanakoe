@@ -1,6 +1,6 @@
 {
   "name": "sanakoe",
-  "description": "Opetushallituksen Caudeau 1 -kirjan kappaleiden sanojen epävirallinen sanakoe",
+  "description": "Opetushallituksen Caudeau 1 & 2 -kirjojen kappaleiden sanojen epävirallinen sanakoe",
   "version": "0.7.0",
   "private": true,
   "homepage": "https://anttikekki.github.io/sanakoe",
@@ -9,15 +9,15 @@
     "lodash": "4.17.21",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-scripts": "5.0.0",
-    "typescript": "4.6.3"
+    "react-scripts": "5.0.1",
+    "typescript": "4.6.4"
   },
   "devDependencies": {
     "@types/lodash": "4.14.178",
     "@types/node": "16.11.7",
     "@types/react": "17.0.38",
     "@types/react-dom": "17.0.11",
-    "gh-pages": "3.2.3"
+    "gh-pages": "4.0.0"
   },
   "scripts": {
     "predeploy": "npm run build",
