@@ -25,7 +25,8 @@ export enum Cadeau_2 {
   Kappale_3a = "3. À table - Bon appétit !",
   Kappale_4 = "4. Les heures",
   Kappale_5 = "5. Les jours de la semaine",
-  Kappale_5a = "5. Les jours de la semaine - Des loisirs"
+  Kappale_5a = "5. Les jours de la semaine - Des loisirs",
+  Kappale_6 = "6. L’emploi du temps"
 }
 
 export type Kappale = Cadeau_1 | Cadeau_2;
@@ -486,5 +487,23 @@ export const kappaleet: Record<Kappale, Array<Sana>> = {
     { fr: "jouer (I) du piano", fi: "soittaa pianoa" },
     { fr: "faire* voler un cerf-volant", fi: "lennättää leijaa" },
     { fr: "faire* du monocycle", fi: "ajaa yksipyöraisellä" },
+  ],
+  [Cadeau_2.Kappale_6]: [
+    { fr: "une matière préféree", fi: "suosikkiaine" },
+    { fr: "une emploi du temp", fi: "lukujärjestys" },
+    { fr: "des matiéres scolaires", fi: "kouluaineita" },
+    { fr: "préférer (I)", fi: "tykätä enemmän" },
+    { fr: "un visiteur", fi: "vierailija" },
+    { fr: "il vient", fi: "hän tulee" },
+    { fr: "la Finlande", fi: "Suomi" },
+    { fr: "tout le monde", fi: "kaikki" },
+    { fr: "tu peux", fi: "sinä voit" },
+    { fr: "parler (I)", fi: "puhua" },
+    { fr: "un peu", fi: "vähän" },
+    { fr: "une journée scolaire", fi: "koulupäivä" },
+    { fr: "un déjeuner", fi: "lounas" },
+    { fr: "finir (II)", fi: "loppua" },
+    { fr: "déjà", fi: "jo" },
+    { fr: "souvent", fi: "usein" },
   ]
 };
